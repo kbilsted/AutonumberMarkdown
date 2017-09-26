@@ -5,7 +5,7 @@ namespace AutonumberMarkdown
     class Renumerator
     {
         static readonly RegexOptions options = RegexOptions.Multiline | RegexOptions.Compiled | RegexOptions.CultureInvariant;
-        static readonly Regex SectionMarkerRegex = new Regex("^(?<level>#+)( |\t)+(\\d+\\.)*(?<title>.*)",  options);
+        static readonly Regex SectionMarkerRegex = new Regex("^(?<level>#+)( |\t)+(\\d|\\.)*\\s+(?<title>.*)",  options);
 
         int chapter;
         int section;
@@ -23,7 +23,7 @@ namespace AutonumberMarkdown
                 {
                     lines[i] = SectionMarkerRegex.Replace(line, m =>
                     {
-                        var level = m.Groups["level"].Value.Trim();
+                        var level = m.Groups["level"].Value;
                         var title = m.Groups["title"].Value;
 
                         switch (level)
