@@ -8,7 +8,15 @@ It reads the file and renumerate the chapters `#`, sections `##`, subsections `#
 Speed: roughly 1.000.000 lines a second (68mb) in 1 second on a simple core I5 gaming pc.
 
 
+## Integrations
 
+You can typically run exe files from within your favorite editor like
+
+ **Notepad++**
+  * Select `Run...`
+  * program to run: `C:\util\AutonumberMarkdown.exe "$(FULL_CURRENT_PATH)"`
+  * Name the short-cut and set keys for it
+  
 
 ## Example translation of a markdown file
 
