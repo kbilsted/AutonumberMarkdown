@@ -1,4 +1,4 @@
-# AutonumberMarkdown
+# Auto number Markdown
 Autonumbering of markdown documents with chapters, sections, subsections, ...
 
 Syntax: `AutonumberMarkdown <filename>`
