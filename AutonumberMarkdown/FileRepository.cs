@@ -13,7 +13,10 @@ namespace AutonumberMarkdown
 
         public void SaveFileWithBackup(string path, string[] content)
         {
-            File.Move(path, path + ".bak");
+            var backupPath = path + ".bak";
+            if (File.Exists(backupPath))
+                File.Delete(backupPath);
+            File.Move(path, backupPath);
             File.WriteAllLines(path, content, Encoding.UTF8);
         }
     }
