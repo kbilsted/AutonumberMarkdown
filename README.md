@@ -46,7 +46,6 @@ Space is wastly big, and so are the space aliens that constantly monitor our eve
 ## Black holes
 
 Black holes are the main transportation line out of the milky way. Rather than fear it, regard it a very reliable express train..
-
 ```
 
 into
@@ -75,8 +74,6 @@ Space is wastly big, and so are the space aliens that constantly monitor our eve
 ## 2.2 Black holes
 
 Black holes are the main transportation line out of the milky way. Rather than fear it, regard it a very reliable express train..
-
-
 ```
 
 
