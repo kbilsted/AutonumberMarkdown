@@ -2,8 +2,13 @@
 
 namespace AutonumberMarkdown
 {
-    class Renumerator
-    {
+	internal interface IRenumerator
+	{
+		string[] ProcessFile(string[] lines);
+	}
+
+	class Renumerator : IRenumerator
+	{
         static readonly RegexOptions options = RegexOptions.Multiline | RegexOptions.Compiled | RegexOptions.CultureInvariant;
         static readonly Regex SectionMarkerRegex = new Regex("^(?<level>#+)\\s+(\\d|\\.)*\\s*(?<title>.*)",  options);
 

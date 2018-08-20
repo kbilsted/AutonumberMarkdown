@@ -8,15 +8,26 @@ namespace AutonumberMarkdown
         {
             if (args.Length == 0)
             {
-                Console.WriteLine("Need parameters. Syntax:\nAutonumberMarkdown <filename>");
+                Console.WriteLine("Need parameters. Syntax:\nAutonumberMarkdown [--sectionsOnly] <filename>");
                 return;
             }
-            var path = args[0];
 
-            var filerepo = new FileRepository();
-            var renumerationLogic = new Renumerator();
+	        IRenumerator renumerationLogic;
+	        int argP = 0;
+	        if (args[argP] == "--sectionsOnly")
+	        {
+		        argP++;
+				renumerationLogic = new RenumeratorSectionsOnly();
+			}
+	        else
+	        {
+				renumerationLogic = new Renumerator();
+			}
 
-            var newfile = renumerationLogic.ProcessFile(filerepo.Readfile(path));
+	        var path = args[argP];
+
+			var filerepo = new FileRepository();
+	        var newfile = renumerationLogic.ProcessFile(filerepo.Readfile(path));
             filerepo.SaveFileWithBackup(path, newfile);
         }
     }

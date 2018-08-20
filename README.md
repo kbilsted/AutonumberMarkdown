@@ -1,7 +1,7 @@
 # Auto number Markdown
-Autonumbering of markdown documents with chapters, sections, subsections, ...
+Autonumbering of markdown documents with chapters, sections, subsections. It makes it easy to write longer structured documents in the editor while at the same time give you near "automatic" numbering.
 
-Syntax: `AutonumberMarkdown <filename>`
+Syntax: `AutonumberMarkdown [--sectionsOnly] <filename>`
 
 It reads the file and renumerate the chapters `#`, sections `##`, subsections `###`... of your markdown document.
 
@@ -18,6 +18,10 @@ You can typically run exe files from within your favorite editor like
   * Name the short-cut and set keys for it
   
 
+### --sectionsOnly
+When using the `--sectionsOnly` flag, the tool only operates on sections, subsections and subsubsections.
+
+  
 ## Example translation of a markdown file
 
 Turns files like
