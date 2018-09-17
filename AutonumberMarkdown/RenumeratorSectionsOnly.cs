@@ -50,25 +50,25 @@ namespace AutonumberMarkdown
 			subsection = 0;
 			sub2section = 0;
 			sub3section = 0;
-			return $"{++section}";
+			return $"{++section}.";
 		}
 
 		string Nextsubsection()
 		{
 			sub2section = 0;
 			sub3section = 0;
-			return $"{section}.{++subsection}";
+			return $"{section}.{++subsection}.";
 		}
 
 		string Nextsub2section()
 		{
 			sub3section = 0;
-			return $"{section}.{subsection}.{++sub2section}";
+			return $"{section}.{subsection}.{++sub2section}.";
 		}
 
 		string Nextsub3section()
 		{
-			return $"{section}.{subsection}.{sub2section}.{++sub3section}";
+			return $"{section}.{subsection}.{sub2section}.{++sub3section}.";
 		}
 	}
 }
