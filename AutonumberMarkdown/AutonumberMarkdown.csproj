@@ -51,6 +51,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renumerator.cs" />
     <Compile Include="RenumeratorSectionsOnly.cs" />
+    <Compile Include="TocEntry.cs" />
+    <Compile Include="TocContentReplacer.cs" />
+    <Compile Include="TocCreator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -8,7 +8,7 @@ namespace AutonumberMarkdown
         {
             if (args.Length == 0)
             {
-                Console.WriteLine("Need parameters. Syntax:\nAutonumberMarkdown [--sectionsOnly] <filename>");
+                Console.WriteLine("Need parameters. Syntax:\nAutonumberMarkdown [--sectionsOnly] [--makeToc] <filename>");
                 return;
             }
 
@@ -24,10 +24,27 @@ namespace AutonumberMarkdown
 				renumerationLogic = new Renumerator();
 			}
 
-	        var path = args[argP];
+	        bool makeToc = false;
+	        if (args[argP] == "--makeToc")
+	        {
+		        makeToc = true;
+		        argP++;
+	        }
+
+			var path = args[argP];
 
 			var filerepo = new FileRepository();
 	        var newfile = renumerationLogic.ProcessFile(filerepo.Readfile(path));
+
+	        if (makeToc)
+	        {
+		        var content = string.Join("\n", newfile);
+		        var newToc = new TocCreator().Execute(content);
+		        newfile = new TocContentReplacer()
+			        .TryReplaceToc(content, newToc)
+			        .Split('\n');
+	        }
+
             filerepo.SaveFileWithBackup(path, newfile);
         }
     }
