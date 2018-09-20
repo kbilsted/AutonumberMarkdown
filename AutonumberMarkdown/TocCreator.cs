@@ -51,7 +51,7 @@ namespace AutonumberMarkdown
 			return parsedToc.ToList();
 		}
 
-		static readonly Regex StuffRemover = new Regex("(`[^`]+`)|(^\\d+([.]\\d*)*)", RegexOptions.Multiline | RegexOptions.Compiled);
+		static readonly Regex StuffRemover = new Regex("(`[^`]+`)", RegexOptions.Multiline | RegexOptions.Compiled);
 
 		string RemoveSpecialCharactersAndIndent(TocEntry entry)
 		{
