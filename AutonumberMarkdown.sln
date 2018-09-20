@@ -5,6 +5,12 @@ VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutonumberMarkdown", "AutonumberMarkdown\AutonumberMarkdown.csproj", "{08E47F68-F157-4149-9BD5-2D09BEA51015}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{63CD9F16-EC0B-4499-95F9-72000A8245BB}"
+	ProjectSection(SolutionItems) = preProject
+		BuildARelease.ps1 = BuildARelease.ps1
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
